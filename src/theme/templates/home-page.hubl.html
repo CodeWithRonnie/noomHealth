@@ -1,0 +1,252 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Noom Health - Home Page Template
+  screenshotPath: /images/screenshots/home-page.png
+-->
+
+<!DOCTYPE html>
+<html lang="{{ page_meta.html_lang_dir }}">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page_meta.name %}{{ page_meta.name }}{% else %}{{ site_settings.company_name }}{% endif %}</title>
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ content.absolute_url }}">
+  <meta property="og:title" content="{{ page_meta.name }}">
+  <meta property="og:description" content="{{ page_meta.meta_description }}">
+  <meta property="og:image" content="{{ page_meta.featured_image }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ content.absolute_url }}">
+  <meta property="twitter:title" content="{{ page_meta.name }}">
+  <meta property="twitter:description" content="{{ page_meta.meta_description }}">
+  <meta property="twitter:image" content="{{ page_meta.featured_image }}">
+
+  {{ standard_header_includes }}
+  
+  <!-- Include base styles -->
+  {% include "../partials/base-styles.html" %}
+  
+  <!-- Include animations -->
+  {% include "../partials/animations.html" %}
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      padding-top: 80px; /* Account for fixed header */
+    }
+    
+    /* Page-specific styles */
+    .page-wrapper {
+      overflow-x: hidden;
+    }
+    
+    .section {
+      position: relative;
+    }
+    
+    /* Smooth scrolling for the entire page */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Custom loading animation */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #059669, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .page-loader.loaded {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loader-content {
+      text-align: center;
+      color: white;
+    }
+    
+    .loader-logo {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
+    }
+    
+    .loader-text {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">NOOM</div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Header (CMS React) -->
+    {% module "header_mod" path="../components/modules/Header" %}
+    
+    <!-- Hero (CMS React) -->
+    {% module "hero_mod" path="../components/modules/Hero" %}
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Dynamic content modules will be inserted here -->
+      {{ content_for_layout }}
+      
+      <!-- Full page composition using CMS React modules -->
+      {% module "path_section" path="../components/modules/PathSection" %}
+      {% module "stats_section" path="../components/modules/StatsSection" %}
+      {% module "platform_section" path="../components/modules/PlatformSection" %}
+      {% module "weightloss_section" path="../components/modules/WeightLossSection" %}
+      {% module "trusted_section" path="../components/modules/TrustedSection" %}
+      {% module "roi_section" path="../components/modules/ROISection" %}
+      {% module "medical_endorsement" path="../components/modules/MedicalEndorsementSection" %}
+      {% module "testimonials_section" path="../components/modules/TestimonialsSection" %}
+      {% module "resources_section" path="../components/modules/ResourcesSection" %}
+      {% module "cta_section" path="../components/modules/CTASection" %}
+    </main>
+    
+    {% module "footer_mod" path="../components/modules/Footer" %}
+  </div>
+
+  <!-- Scripts -->
+  {{ standard_footer_includes }}
+  
+  <script>
+    // Page initialization
+    (function() {
+      'use strict';
+      
+      // Page loader
+      window.addEventListener('load', function() {
+        const loader = document.getElementById('pageLoader');
+        if (loader) {
+          setTimeout(() => {
+            loader.classList.add('loaded');
+            setTimeout(() => {
+              loader.style.display = 'none';
+            }, 500);
+          }, 1000);
+        }
+      });
+      
+      // Enhanced scroll behavior
+      function initEnhancedScrolling() {
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // Header hide/show on scroll
+          if (header) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+              header.style.transform = 'translateY(-100%)';
+            } else {
+              header.style.transform = 'translateY(0)';
+            }
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+      }
+      
+      // Initialize smooth anchor scrolling
+      function initSmoothAnchors() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            
+            if (target) {
+              const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+              const targetPosition = target.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      }
+      
+      // Lazy loading for images
+      function initLazyLoading() {
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+              }
+            });
+          });
+          
+          document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+          });
+        }
+      }
+      
+      // Initialize all functionality
+      function init() {
+        initEnhancedScrolling();
+        initSmoothAnchors();
+        initLazyLoading();
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+      
+      // Performance monitoring
+      if (window.performance) {
+        window.addEventListener('load', function() {
+          const perfData = window.performance.timing;
+          const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+          console.log('Page load time:', pageLoadTime + 'ms');
+        });
+      }
+      
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[
+  { "id": "hero_title", "name": "hero_title", "label": "Title", "type": "text", "required": true },
+  { "id": "hero_subtitle", "name": "hero_subtitle", "label": "Subtitle", "type": "text" },
+  { "id": "badge_text", "name": "badge_text", "label": "Badge Text", "type": "text" }
+]
+

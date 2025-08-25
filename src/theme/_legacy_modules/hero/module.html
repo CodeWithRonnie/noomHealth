@@ -1,0 +1,69 @@
+<section class="hero" id="hero-module" data-parallax="{{ module.enable_parallax }}" data-animations="{{ module.enable_animations }}">
+  <div class="hero-background">
+    {% if module.background_video.conversion_asset.url %}
+      <video 
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="{{ module.background_image.src }}"
+      >
+        <source src="{{ module.background_video.conversion_asset.url }}" type="video/mp4">
+        <!-- Fallback image for browsers that don't support video -->
+        <img 
+          src="{{ module.background_image.src }}" 
+          alt="{{ module.background_image.alt }}"
+          class="hero-image"
+        >
+      </video>
+    {% else %}
+      <img 
+        src="{{ module.background_image.src }}" 
+        alt="{{ module.background_image.alt }}"
+        class="hero-image"
+      >
+    {% endif %}
+    <div class="hero-overlay"></div>
+    
+    <!-- Floating Elements for Animation -->
+    <div class="floating-elements">
+      <div class="floating-element floating-element-1"></div>
+      <div class="floating-element floating-element-2"></div>
+      <div class="floating-element floating-element-3"></div>
+      <div class="floating-element floating-element-4"></div>
+    </div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1 class="hero-title animate-fade-in-up">
+          {{ module.hero_title }}
+        </h1>
+        <p class="hero-subtitle animate-fade-in-up animation-delay-200">
+          {{ module.hero_subtitle }}
+        </p>
+        {% if module.cta_text and module.cta_url %}
+          <a href="{{ module.cta_url }}" class="hero-cta animate-fade-in-up animation-delay-400">
+            {{ module.cta_text }}
+          </a>
+        {% endif %}
+      </div>
+      
+      {% if module.badge_text %}
+        <div class="hero-badge animate-slide-in-right animation-delay-600">
+          <span class="badge-text">{{ module.badge_text }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator animate-bounce">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 13l3 3 7-7"></path>
+      <path d="M7 6l3 3 7-7"></path>
+    </svg>
+  </div>
+</section>

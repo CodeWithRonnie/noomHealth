@@ -1,0 +1,63 @@
+<header class="header" id="header-module">
+  <div class="header-container">
+    <a href="/" class="header-logo animate-fade-in">
+      <span class="logo-text">{{ module.logo_text }}</span>
+      <span class="logo-subtitle">{{ module.logo_subtitle }}</span>
+    </a>
+    
+    <nav class="header-nav">
+      <!-- For Individuals Dropdown -->
+      <div class="nav-item">
+        <button class="nav-link dropdown-trigger" data-dropdown="individuals">
+          FOR INDIVIDUALS
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        </button>
+        <div class="dropdown-menu" id="dropdown-individuals">
+          <div class="dropdown-content animate-slide-down">
+            {% for item in module.individuals_menu.menu_items %}
+              <a href="{{ item.url }}" class="dropdown-item">{{ item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- For Organizations Dropdown -->
+      <div class="nav-item">
+        <button class="nav-link dropdown-trigger" data-dropdown="organizations">
+          FOR ORGANIZATIONS
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        </button>
+        <div class="dropdown-menu" id="dropdown-organizations">
+          <div class="dropdown-content animate-slide-down">
+            {% for item in module.organizations_menu.menu_items %}
+              <a href="{{ item.url }}" class="dropdown-item">{{ item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Dropdown -->
+      <div class="nav-item">
+        <button class="nav-link dropdown-trigger" data-dropdown="company">
+          COMPANY
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        </button>
+        <div class="dropdown-menu" id="dropdown-company">
+          <div class="dropdown-content animate-slide-down">
+            {% for item in module.company_menu.menu_items %}
+              <a href="{{ item.url }}" class="dropdown-item">{{ item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">EN</a>
+    </nav>
+  </div>
+</header>

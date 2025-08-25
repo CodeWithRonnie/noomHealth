@@ -1,0 +1,12 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Getting started with CMS React
+-->
+{% extends "./layouts/base.hubl.html" %}
+
+{% block body %}
+  {% module "header_mod" path="../components/modules/Header" %}
+  {% module "hero_mod" path="../components/modules/Hero" %}
+  {% module "stats_mod" path="../components/modules/StatsSection" %}
+{% endblock body %}

@@ -1,0 +1,102 @@
+<section class="stats-section background-{{ module.background_style }}" id="stats-section" 
+         data-animations="{{ module.enable_animations }}"
+         data-counter-animation="{{ module.enable_counter_animation }}">
+  
+  {% if module.background_style == 'image' and module.background_image %}
+  <div class="background-image">
+    <img src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" />
+    <div class="background-overlay"></div>
+  </div>
+  {% endif %}
+  
+  <div class="container">
+    {% if module.section_title or module.section_subtitle %}
+    <div class="section-header text-center">
+      {% if module.section_title %}
+      <h2 class="section-title animate-on-scroll fade-in-up">
+        {{ module.section_title }}
+      </h2>
+      {% endif %}
+      
+      {% if module.section_subtitle %}
+      <p class="section-subtitle animate-on-scroll fade-in-up delay-200">
+        {{ module.section_subtitle }}
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    <div class="stats-grid">
+      {% for stat in module.stats %}
+      <div class="stat-card animate-on-scroll scale-in delay-{{ loop.index0|multiply(100) }}">
+        <div class="stat-content">
+          {% if stat.icon %}
+          <div class="stat-icon">
+            {% if stat.icon == 'users' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            {% elif stat.icon == 'heart' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            {% elif stat.icon == 'dollar-sign' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            {% elif stat.icon == 'trending-up' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23,6 13.5,15.5 8.5,10.5 1,18"></polyline>
+                <polyline points="17,6 23,6 23,12"></polyline>
+              </svg>
+            {% elif stat.icon == 'star' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+              </svg>
+            {% elif stat.icon == 'check-circle' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22,4 12,14.01 9,11.01"></polyline>
+              </svg>
+            {% elif stat.icon == 'target' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            {% elif stat.icon == 'award' %}
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+              </svg>
+            {% endif %}
+          </div>
+          {% endif %}
+          
+          <div class="stat-number" data-count="{{ stat.number }}">
+            {{ stat.number }}
+          </div>
+          
+          <div class="stat-description">
+            {{ stat.description }}
+          </div>
+        </div>
+        
+        <!-- Animated background element -->
+        <div class="stat-bg-animation"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <!-- Floating animation elements -->
+  <div class="floating-stats">
+    <div class="floating-stat floating-stat-1"></div>
+    <div class="floating-stat floating-stat-2"></div>
+    <div class="floating-stat floating-stat-3"></div>
+  </div>
+</section>

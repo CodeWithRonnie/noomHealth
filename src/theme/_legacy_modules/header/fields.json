@@ -1,0 +1,152 @@
+[
+  {
+    "id": "logo_text",
+    "name": "logo_text",
+    "label": "Logo Text",
+    "required": true,
+    "locked": false,
+    "type": "text",
+    "default": "NOOM"
+  },
+  {
+    "id": "logo_subtitle",
+    "name": "logo_subtitle", 
+    "label": "Logo Subtitle",
+    "required": true,
+    "locked": false,
+    "type": "text",
+    "default": "health"
+  },
+  {
+    "id": "individuals_menu",
+    "name": "individuals_menu",
+    "label": "For Individuals Menu",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "individuals_menu_items",
+        "name": "menu_items",
+        "label": "Menu Items",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 10,
+          "sorting_label_field": "title"
+        },
+        "children": [
+          {
+            "id": "individuals_title",
+            "name": "title",
+            "label": "Title",
+            "required": true,
+            "locked": false,
+            "type": "text"
+          },
+          {
+            "id": "individuals_url",
+            "name": "url",
+            "label": "URL",
+            "required": true,
+            "locked": false,
+            "type": "url"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "individuals_menu_items": []
+    }
+  },
+  {
+    "id": "organizations_menu",
+    "name": "organizations_menu",
+    "label": "For Organizations Menu",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "organizations_menu_items",
+        "name": "menu_items",
+        "label": "Menu Items",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 10,
+          "sorting_label_field": "title"
+        },
+        "children": [
+          {
+            "id": "organizations_title",
+            "name": "title",
+            "label": "Title",
+            "required": true,
+            "locked": false,
+            "type": "text"
+          },
+          {
+            "id": "organizations_url",
+            "name": "url",
+            "label": "URL",
+            "required": true,
+            "locked": false,
+            "type": "url"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "organizations_menu_items": []
+    }
+  },
+  {
+    "id": "company_menu",
+    "name": "company_menu",
+    "label": "Company Menu", 
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "company_menu_items",
+        "name": "menu_items",
+        "label": "Menu Items",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 10,
+          "sorting_label_field": "title"
+        },
+        "children": [
+          {
+            "id": "company_title",
+            "name": "title",
+            "label": "Title",
+            "required": true,
+            "locked": false,
+            "type": "text"
+          },
+          {
+            "id": "company_url",
+            "name": "url",
+            "label": "URL",
+            "required": true,
+            "locked": false,
+            "type": "url"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "company_menu_items": []
+    }
+  }
+]

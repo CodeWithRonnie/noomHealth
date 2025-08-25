@@ -1,0 +1,163 @@
+.resources-section {
+  padding: 80px 0;
+  background: #F8F9FA;
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.resource-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.resource-image.blog {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.resource-image.webinar {
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+}
+
+.resource-image.whitepaper {
+  background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);
+}
+
+.resource-image-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.noom-logo {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.resource-image-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 280px;
+}
+
+.resource-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+}
+
+.resource-content {
+  padding: 24px;
+}
+
+.resource-type {
+  display: inline-block;
+  background: #F3F4F6;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.resource-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.resource-subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+.resources-cta {
+  text-align: center;
+}
+
+.view-resources-btn {
+  background: #D2483B;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-resources-btn:hover {
+  background: #B03B2F;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .resources-section {
+    padding: 60px 0;
+  }
+  
+  .resources-container {
+    padding: 0 16px;
+  }
+  
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  
+  .resource-content {
+    padding: 20px;
+  }
+  
+  .resource-title {
+    font-size: 16px;
+  }
+}

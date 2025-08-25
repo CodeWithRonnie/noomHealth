@@ -1,0 +1,132 @@
+.weight-loss-section {
+  padding: 80px 0;
+  background: #F8F9FA;
+}
+
+.weight-loss-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.weight-loss-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: center;
+}
+
+.weight-loss-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.weight-loss-description {
+  font-size: 16px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.weight-loss-subtitle {
+  font-size: 16px;
+  color: #1A1A1A;
+  margin-bottom: 24px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.benefit-item {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.benefit-item::before {
+  content: "•";
+  color: #D2483B;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: #9CA3AF;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.learn-more-btn {
+  background: #D2483B;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.learn-more-btn:hover {
+  background: #B03B2F;
+}
+
+.phone-mockup {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 40px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.phone-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+@media (max-width: 1024px) {
+  .weight-loss-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  
+  .phone-mockup {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .weight-loss-section {
+    padding: 60px 0;
+  }
+  
+  .weight-loss-container {
+    padding: 0 16px;
+  }
+  
+  .weight-loss-title {
+    font-size: 28px;
+  }
+  
+  .phone-mockup {
+    width: 250px;
+    height: 500px;
+  }
+}

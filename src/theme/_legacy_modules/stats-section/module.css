@@ -1,0 +1,322 @@
+/* Stats Section Module Styles */
+.stats-section {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+/* Background Styles */
+.stats-section.background-white {
+  background: #ffffff;
+}
+
+.stats-section.background-gray {
+  background: #f8f9fa;
+}
+
+.stats-section.background-gradient {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  color: white;
+}
+
+.stats-section.background-image {
+  color: white;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.6));
+}
+
+.stats-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Stat Cards */
+.stat-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.stats-section.background-white .stat-card,
+.stats-section.background-gray .stat-card {
+  background: white;
+  backdrop-filter: none;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section.background-gradient .stat-card:hover,
+.stats-section.background-image .stat-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Stat Icons */
+.stat-icon {
+  margin-bottom: 1.5rem;
+  color: currentColor;
+  opacity: 0.8;
+}
+
+.stats-section.background-white .stat-icon,
+.stats-section.background-gray .stat-icon {
+  color: #059669;
+}
+
+.stat-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Stat Numbers */
+.stat-number {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  background: linear-gradient(45deg, currentColor, rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section.background-white .stat-number,
+.stats-section.background-gray .stat-number {
+  background: linear-gradient(45deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stat Descriptions */
+.stat-description {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.stats-section.background-white .stat-description,
+.stats-section.background-gray .stat-description {
+  color: #6b7280;
+}
+
+/* Background Animation */
+.stat-bg-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.stat-card:hover .stat-bg-animation {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Floating Elements */
+.floating-stats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-stat {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: float-stats 8s ease-in-out infinite;
+}
+
+.floating-stat-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.floating-stat-2 {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.floating-stat-3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  right: 5%;
+  animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes float-stats {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes number-count {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.stat-number.counting {
+  animation: number-count 0.6s ease-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 3rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .floating-stats {
+    display: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .stat-bg-animation,
+  .floating-stat {
+    animation: none;
+    transition: none;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .stats-section.background-white {
+    background: #1a1a1a;
+    color: white;
+  }
+  
+  .stats-section.background-gray {
+    background: #111827;
+    color: white;
+  }
+  
+  .stats-section.background-white .stat-card,
+  .stats-section.background-gray .stat-card {
+    background: #374151;
+    border-color: #4b5563;
+    color: white;
+  }
+  
+  .stats-section.background-white .stat-description,
+  .stats-section.background-gray .stat-description {
+    color: #d1d5db;
+  }
+}

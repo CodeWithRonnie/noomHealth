@@ -1,0 +1,10 @@
+{
+  "label": "Noom Theme",
+  "author": {
+    "name": "NoomCare",
+    "email": "dev@noomcare.com",
+    "website": "https://getnoomcare.com"
+  },
+  "documentation_url": "https://developers.hubspot.com/docs/cms/building-blocks/themes/hubspot-cms-theme-requirements",
+  "global": false
+}

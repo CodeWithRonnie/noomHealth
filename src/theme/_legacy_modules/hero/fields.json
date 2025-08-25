@@ -1,0 +1,85 @@
+[
+  {
+    "id": "hero_title",
+    "name": "hero_title",
+    "label": "Hero Title",
+    "required": true,
+    "locked": false,
+    "type": "text",
+    "default": "Healthier people. Lower costs. Smarter healthcare."
+  },
+  {
+    "id": "hero_subtitle",
+    "name": "hero_subtitle",
+    "label": "Hero Subtitle",
+    "required": true,
+    "locked": false,
+    "type": "text",
+    "default": "The science-based solution to reduce weight and cardiometabolic risk with behavioral change for lasting results. That means more money for your organization and better outcomes for everyone."
+  },
+  {
+    "id": "cta_text",
+    "name": "cta_text",
+    "label": "Call-to-Action Text",
+    "required": true,
+    "locked": false,
+    "type": "text",
+    "default": "Get started"
+  },
+  {
+    "id": "cta_url",
+    "name": "cta_url",
+    "label": "Call-to-Action URL",
+    "required": false,
+    "locked": false,
+    "type": "text",
+    "default": "/request-demo"
+  },
+  {
+    "id": "background_video_url",
+    "name": "background_video_url",
+    "label": "Background Video URL",
+    "required": false,
+    "locked": false,
+    "type": "text"
+  },
+  {
+    "id": "background_image",
+    "name": "background_image",
+    "label": "Background Image (Fallback)",
+    "required": false,
+    "locked": false,
+    "type": "image",
+    "default": {
+      "src": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+      "alt": "Healthcare professionals"
+    }
+  },
+  {
+    "id": "badge_text",
+    "name": "badge_text",
+    "label": "Badge Text",
+    "required": false,
+    "locked": false,
+    "type": "text",
+    "default": "NOOM WORKS"
+  },
+  {
+    "id": "enable_parallax",
+    "name": "enable_parallax",
+    "label": "Enable Parallax Effect",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "enable_animations",
+    "name": "enable_animations",
+    "label": "Enable Animations",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "default": true
+  }
+]

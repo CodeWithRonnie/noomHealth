@@ -1,0 +1,139 @@
+[
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "type": "text",
+    "default": "Proven Results"
+  },
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "locked": false,
+    "type": "text",
+    "default": "Real outcomes that demonstrate the power of our approach"
+  },
+  {
+    "id": "stats",
+    "name": "stats",
+    "label": "Statistics",
+    "required": true,
+    "locked": false,
+    "type": "group",
+    "occurrence": {
+      "min": 2,
+      "max": 6,
+      "sorting_label_field": "number"
+    },
+    "children": [
+      {
+        "id": "number",
+        "name": "number",
+        "label": "Number",
+        "required": true,
+        "locked": false,
+        "type": "text",
+        "help_text": "e.g., 50M+, 85%, $2.5K"
+      },
+      {
+        "id": "description",
+        "name": "description",
+        "label": "Description",
+        "required": true,
+        "locked": false,
+        "type": "text",
+        "help_text": "Brief description of the statistic"
+      },
+      {
+        "id": "icon",
+        "name": "icon",
+        "label": "Icon",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "choices": [
+          ["users", "Users"],
+          ["heart", "Heart"],
+          ["dollar-sign", "Dollar Sign"],
+          ["trending-up", "Trending Up"],
+          ["star", "Star"],
+          ["check-circle", "Check Circle"],
+          ["target", "Target"],
+          ["award", "Award"]
+        ],
+        "default": "users"
+      }
+    ],
+    "default": [
+      {
+        "number": "50M+",
+        "description": "Lives changed",
+        "icon": "users"
+      },
+      {
+        "number": "85%",
+        "description": "Success rate",
+        "icon": "trending-up"
+      },
+      {
+        "number": "$2.5K",
+        "description": "Average savings per employee",
+        "icon": "dollar-sign"
+      },
+      {
+        "number": "4.8/5",
+        "description": "User satisfaction",
+        "icon": "star"
+      }
+    ]
+  },
+  {
+    "id": "background_style",
+    "name": "background_style",
+    "label": "Background Style",
+    "required": false,
+    "locked": false,
+    "type": "choice",
+    "choices": [
+      ["white", "White"],
+      ["gray", "Light Gray"],
+      ["gradient", "Gradient"],
+      ["image", "Background Image"]
+    ],
+    "default": "gradient"
+  },
+  {
+    "id": "background_image",
+    "name": "background_image",
+    "label": "Background Image",
+    "required": false,
+    "locked": false,
+    "type": "image",
+    "visibility": {
+      "controlling_field": "background_style",
+      "controlling_value_regex": "image"
+    }
+  },
+  {
+    "id": "enable_animations",
+    "name": "enable_animations",
+    "label": "Enable Animations",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "enable_counter_animation",
+    "name": "enable_counter_animation",
+    "label": "Enable Counter Animation",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "default": true
+  }
+]
